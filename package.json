@@ -1,0 +1,22 @@
+{
+  "name": "sistema-administracion-backend",
+  "version": "1.0.0",
+  "description": "Backend REST de administracion con Node.js, Supabase y Bcrypt",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --use-system-ca src/server.js",
+    "dev": "node --watch --use-system-ca src/server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.57.4",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.6.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
