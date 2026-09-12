@@ -1,43 +1,37 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Outfit', system-ui, sans-serif;
-  --color-ink: #0c0c0d;
-  --color-charcoal: #131314;
-  --color-slate: #1b1b1d;
-  --color-line: #2b292a;
-  --color-mist: #8f8984;
-  --color-stone: #c9c3bc;
-  --color-ivory: #ece7e1;
-  --color-wine: #6a333f;
-  --color-wine-deep: #4c242e;
-  --color-wine-soft: #8a4a56;
+  --font-serif: 'Outfit', system-ui, sans-serif;
+  --font-display: 'Anton', Impact, sans-serif;
+  --color-ink: #12080a;
+  --color-charcoal: #1a0d10;
+  --color-slate: #241116;
+  --color-line: #3d1e24;
+  --color-mist: #b0898f;
+  --color-stone: #e4c9cd;
+  --color-ivory: #f6ecee;
+  --color-wine: #722f37;
+  --color-wine-deep: #4a1c22;
+  --color-wine-soft: #9a4450;
+  --color-gold: #722f37;
+  --color-violet: #4a1c22;
 }
 
-html,
-body,
-#app {
-  min-height: 100%;
-}
-
+html { scroll-behavior: smooth; }
+html, body, #app { min-height: 100%; }
 body {
   margin: 0;
-  background: var(--color-ink);
+  background: #12080a;
   color: var(--color-ivory);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
 }
-
-.grain {
-  pointer-events: none;
-  position: fixed;
-  inset: 0;
-  z-index: 50;
-  opacity: 0.045;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-
 .field {
   width: 100%;
   background: transparent;
@@ -46,15 +40,27 @@ body {
   padding: 0.7rem 0 0.55rem;
   color: var(--color-ivory);
   font-size: 0.95rem;
-  letter-spacing: 0.01em;
   outline: none;
-  transition: border-color 0.25s ease;
 }
-
-.field:focus {
-  border-color: var(--color-wine-soft);
+.field:focus { border-color: var(--color-wine-soft); }
+.field::placeholder { color: #6d454a; }
+.btn-gold {
+  background: var(--color-wine);
+  color: #f6ecee;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.78rem;
 }
-
-.field::placeholder {
-  color: #6d6864;
+.btn-violet {
+  background: var(--color-wine-deep);
+  color: #f6ecee;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 0.85rem 1.6rem;
+  font-size: 0.78rem;
 }

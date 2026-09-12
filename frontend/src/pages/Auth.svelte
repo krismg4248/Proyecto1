@@ -3,6 +3,7 @@
   import { login, registrar } from '../lib/api.js';
   import { guardarSesion } from '../lib/sesion.js';
 
+  let { onvolver } = $props();
   let modo = $state('entrar');
   let nombre = $state('');
   let email = $state('');
@@ -47,19 +48,21 @@
   >
     <div
       class="pointer-events-none absolute -left-24 top-24 h-80 w-80 rounded-full opacity-30"
-      style="background: radial-gradient(circle, #4c242e 0%, transparent 70%);"
+      style="background: radial-gradient(circle, #722f37 0%, transparent 70%);"
     ></div>
 
-    <p class="text-[0.7rem] font-light uppercase tracking-[0.38em] text-mist">Sistema</p>
+    <button type="button" class="text-[0.7rem] uppercase tracking-[0.38em] text-mist" onclick={onvolver}>
+      ← Crimson
+    </button>
 
     <div class="relative max-w-sm">
       <span class="mb-8 block h-px w-10 bg-wine"></span>
       <h1 class="font-serif text-5xl font-medium leading-[1.12] text-ivory xl:text-[3.35rem]">
-        Administración
-        <span class="italic text-stone">serena.</span>
+        Crimson
+        <span class="italic text-stone">hardware.</span>
       </h1>
       <p class="mt-8 max-w-[17.5rem] text-sm font-light leading-7 text-mist">
-        Un espacio contenido, sin ruido visual. Entra o crea tu cuenta para continuar.
+        Entra para guardar pedidos de componentes y accesorios.
       </p>
     </div>
 
@@ -71,8 +74,11 @@
   <main class="flex flex-1 items-center justify-center px-6 py-16 sm:px-10">
     <div class="w-full max-w-[24rem]">
       <div class="mb-12 lg:hidden">
+        <button type="button" class="mb-5 text-[0.7rem] uppercase tracking-[0.22em] text-mist" onclick={onvolver}>
+          ← Inicio
+        </button>
         <span class="mb-5 block h-px w-8 bg-wine"></span>
-        <h1 class="font-serif text-4xl text-ivory">Administración</h1>
+        <h1 class="font-serif text-4xl text-ivory">Crimson</h1>
       </div>
 
       <div class="mb-10 flex gap-8 text-[0.72rem] uppercase tracking-[0.22em]">

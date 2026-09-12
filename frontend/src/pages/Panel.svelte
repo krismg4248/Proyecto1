@@ -1,7 +1,7 @@
 <script>
   import { cerrarSesion } from '../lib/sesion.js';
 
-  let { usuario } = $props();
+  let { usuario, onvolver } = $props();
 
   const inicial = $derived((usuario?.nombre || '?').trim().charAt(0).toUpperCase());
 </script>
@@ -9,16 +9,17 @@
 <div class="flex min-h-screen flex-col">
   <header class="flex items-center justify-between border-b border-line px-6 py-5 sm:px-10">
     <div>
-      <p class="text-[0.65rem] uppercase tracking-[0.32em] text-mist">Sistema</p>
-      <p class="font-serif text-xl text-ivory">Administración</p>
+      <p class="text-[0.65rem] uppercase tracking-[0.32em] text-mist">Crimson</p>
+      <p class="font-serif text-xl text-ivory">Tu cuenta</p>
     </div>
-    <button
-      type="button"
-      class="text-[0.68rem] uppercase tracking-[0.22em] text-mist transition-colors hover:text-ivory"
-      onclick={cerrarSesion}
-    >
-      Cerrar sesión
-    </button>
+    <div class="flex gap-6">
+      <button type="button" class="text-[0.68rem] uppercase tracking-[0.22em] text-mist hover:text-ivory" onclick={onvolver}>
+        Inicio
+      </button>
+      <button type="button" class="text-[0.68rem] uppercase tracking-[0.22em] text-mist hover:text-ivory" onclick={cerrarSesion}>
+        Cerrar sesión
+      </button>
+    </div>
   </header>
 
   <main class="mx-auto flex w-full max-w-2xl flex-1 flex-col justify-center px-6 py-20 sm:px-10">
